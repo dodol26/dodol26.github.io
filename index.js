@@ -4,6 +4,7 @@ let dbItem = [
   { id: 2, namaItem: "item2", harga: 15000, img: "./Produk-unggulan/cup-20_2.png", promo: false,desc:'kopi yang berasa kopi' },
   { id: 3, namaItem: "item3", harga: 20000, img: "./Produk-unggulan/slider_part_1.png", promo: false,desc:'kopi yang berasa kopi' },
   { id: 4, namaItem: "item4", harga: 25000, img: "./Produk-unggulan/slider_part_2.png", promo: false ,desc:'kopi yang berasa kopi'},
+  { id: 5, namaItem: "item5 ", harga: 25000, img: "./Produk-unggulan/slider_part_2.png", promo: false ,desc:'kopi yang berasa kopi'},
 ]
 
 dbItem.map((item) => {
@@ -14,10 +15,12 @@ dbItem.map((item) => {
   productCard.classList.add('card')
   productCard.classList.add('shadow')
   productCard.style.width = "18rem"
+  productCard.style.margin = "0 5px"
+  productCard.style.borderRadius = "10px"
   productCard.innerHTML =
     `<img src="${img}" class="card-img-top" style="height:250px;" alt="...">
   <div class="card-body">
-      <h5 class="card-title">${namaItem}</h5>
+      <h5 class="card-title">${namaItem}</h5> 
       <p class="card-text">${harga}</p>
       <p class="card-text">${desc}</p>
       <a href="#" class="btn btn-outline-danger"> <i class="fa fa-minus" aria-hidden="true"></i>
