@@ -1,3 +1,4 @@
+
 /* ini css untuk login dan register */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
@@ -182,3 +183,11 @@ form .btn input[type="submit"]{
   cursor: pointer;
 }
 /* ini batas akhir */
+#submit-button {
+  background-color: rgb(160, 95, 235);
+  color:white;
+}
+
+.main-content{
+  width: 100%;
+}
