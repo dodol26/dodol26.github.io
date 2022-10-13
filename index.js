@@ -16,3 +16,17 @@ function show(param) {
     document.getElementById(param).style.display = 'block'
   }
 }
+
+function addToPromoCart(){
+  let addToCartPromo = document.createElement('div')
+  let pictureProduct = document.createElement('div')
+  dbItem.map((item) =>{
+    const {nama,harga,img,promo} = item
+    pictureProduct.setAttribute('width','100%')
+    pictureProduct.style.background = `${img}`
+    addToCartPromo.appendChild(pictureProduct)
+    addToCartPromo.innerHTML = `<div>${nama}</div>`  
+    addToCartPromo.innerHTML = `<div>${harga}</div>`  
+  })
+
+}
