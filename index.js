@@ -1,9 +1,14 @@
+
 let dbItem = [
-    {id:1, namaItem: "Hack Americano", harga: 10000, img: "#", promo: false}
+    {id: 1, namaItem: "Hack Americano", harga: 10000, img: "#", promo: false},
+    {id: 2, namaItem: "item2", harga: 15000, img: "#", promo: false},
+    {id: 3, namaItem: "item3", harga: 20000, img: "#", promo: false},
+    {id: 4, namaItem: "item4", harga: 25000, img: "#", promo: false},
 ]
 
+
 let dbUser = {
-    dodol: {password: "rahasia", email: "tonni.lius26@gmail.com",type: "admin"}
+    dodol: {password: "rahasia", email: "tonni.lius26@gmail.com", type: "admin"},
 }
 function hide(param) {
   document.getElementById(param).style.display = 'none'
@@ -32,6 +37,10 @@ function addToPromoCart(){
     addToCartPromo.innerHTML = `<div>${harga}</div>`  
   })
 }
+
+let inputUser = document.getElementById("user-input")
+let inputPassword = document.getElementById("password-input")
+let inputEmail = document.getElementById("email-input")
 
 function signUp(inputUser, inputPassword, inputEmail){
     if (!inputUser){
@@ -102,3 +111,20 @@ function deleteItem(selectedId){
         }        
     })
 }
+const loginText = document.querySelector(".title-text .login");
+const loginForm = document.querySelector("form.login");
+const loginBtn = document.querySelector("label.login");
+const signupBtn = document.querySelector("label.signup");
+const signupLink = document.querySelector("form .signup-link a");
+signupBtn.onclick = (() => {
+    loginForm.style.marginLeft = "-50%";
+    loginText.style.marginLeft = "-50%";
+});
+loginBtn.onclick = (() => {
+    loginForm.style.marginLeft = "0%";
+    loginText.style.marginLeft = "0%";
+});
+signupLink.onclick = (() => {
+    signupBtn.click();
+    return false;
+});
