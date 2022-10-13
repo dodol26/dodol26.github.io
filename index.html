@@ -4,39 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" <link rel="stylesheet"
+        href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
-    <!-- CSS only -->
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <title>Hackbuks</title>
+
 </head>
 
 <body>
-    <header class="navbar">
-        
-    </header>
-    <div class="container">
+    <!-------------------------------------------------- INI NAVBAR BOSS --------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <img height="80" width="80" class="navbar-brand rounded-circle float-start" src="images/logo.png">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link link-primary active" aria-current="page" href="#"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"> Signup </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"> Login </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"> Promo </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="text-center m-5">
+            <h1> Categories of The Month </h1>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            <div class="text-center">
+                <img width="200" height="200" src="images/2.jpg" class="rounded-circle float-center" alt="...">
+            </div>
+        </div>
 
     </div>
-    <footer class="footer-06">
-        <div class="container">
-            <div class="row align-items-center align-items-stretch mb-5">
-                <div class="col-md-4 py-4 py-md-5 aside-stretch d-flex align-items-center">
+    <!------------------------------------------------INI FOOTER BOSSS------------------------------------------------------------------------------>
+    <div class="footer-06">
+        <div class="container" style="display: flex; flex-direction:column; justify-content:center;align-items:center;">
+            <div class="row align-items-center align-items-center mb-5" style="display:flex ; flex-direction: column; margin:0; width: 100%; text-align: center;">
+                <div class="col-md-4 py-4 py-md-5 aside-stretch d-flex align-items-center"
+                    style="padding: 0 !important;">
                     <div class="w-100">
                         <span class="subheading">Subscribe to our</span>
                         <h3 class="heading-section">Newsletter</h3>
                     </div>
                 </div>
-                <div class="col-md-8 py-4 py-md-5 d-flex align-items-center pl-md-5 aside-stretch-right">
+                <div class="col-md-8 py-4 py-md-5 d-flex align-items-center pl-md-5 aside-stretch-right"
+                    style="padding: 0 !important;">
                     <form action="#" class="subscribe-form w-100">
-          <div class="form-group d-flex">
-            <input type="text" class="form-control rounded-left" placeholder="Enter email address">
-            <button type="submit" class="form-control submit"><span>Submit</span></button>
-          </div>
-        </form>
+                        <div class="form-group d-flex" style="display: flex; flex-direction:column; align-items: center;">
+                            <input type="text" class="form-control rounded-left align-items-center mb-2" id="input-email"
+                                style="width: 55%;" placeholder="Enter email address">
+                            <button type="submit" class="form-control submit" style="width: 55%;"
+                                id="submit-button"><span>Submit</span></button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row pt-4">
@@ -44,117 +118,19 @@
                     <div class="row justify-content-end">
                         <div class="col-md-12 col-lg-9 text-md-right mb-md-0 mb-4">
                             <h2 class="footer-heading"><a href="#" class="logo">Colorlib</a></h2>
-                            <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9 col-lg-6">
-                    <div class="row">
-                        <div class="col-md-4 mb-md-0 mb-4">
-                            <h2 class="footer-heading">Information</h2>
-                            <ul class="list-unstyled">
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Our Company</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Data</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Pricing</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Contact Us</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Support</a></li>
-                </ul>
-                        </div>
-                        <div class="col-md-4 mb-md-0 mb-4">
-                            <h2 class="footer-heading">Application</h2>
-                            <ul class="list-unstyled">
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Download</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Bike Provider</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>How to Used</a></li>
-                </ul>
-                        </div>
-                        <div class="col-md-4 mb-md-0 mb-4">
-                            <h2 class="footer-heading">API</h2>
-                            <ul class="list-unstyled">
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Documentation</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Credential</a></li>
-                  <li><a href="#" class="py-1 d-block"><span class="ion-ios-checkmark-circle-outline mr-2"></span>Developer info</a></li>
-                </ul>
+                            <p class="copyright">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                                This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <title>Hackbuks</title>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-
-<body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-          <img height="80" width="80" class="navbar-brand rounded-circle float-start" src="images/logo.png">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link link-primary active" aria-current="page" href="#"> Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#"> Signup </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active"> Login </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active"> Promo </a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="images/1.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="images/2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="images/3.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-      <div class="text-center m-5">
-        <h1> Categories of The Month </h1>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-
-      <div class="text-center">
-        <img width="200" height="200" src="images/2.jpg" class="rounded-circle float-start" alt="...">
-      </div>
     </div>
 </body>
 
