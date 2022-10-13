@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" <link rel="stylesheet"
-        href="css/ionicons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -13,11 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="index.css" rel="stylesheet">
     <title>Hackbuks</title>
 
@@ -38,10 +34,7 @@
                         <a class="nav-link link-primary active" aria-current="page" href="#"> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"> Signup </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active"> Login </a>
+                        <a class="nav-link active" href="#" onclick="show('form-inpt')"> Signup & Login </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active"> Promo </a>
@@ -55,37 +48,88 @@
         </div>
     </nav>
 
-    <div class="main-content">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/1.jpg" class="d-block w-100" alt="...">
+    </header>
+    <div class="container" style="padding:20px 0 ;">
+        <div class='registerDanLogin mb-5' id="form-inpt"
+            style="display:none;align-items:center; justify-content: center;">
+            <div class="wrapper" style=" width: 80%;">
+                <div class="title-text">
+                    <div class="title login">
+                        Login Form
+                    </div>
+                    <div class="title signup">
+                        Signup Form
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="images/2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/3.jpg" class="d-block w-100" alt="...">
+                <div class="form-container">
+                    <div class="slide-controls">
+                        <input type="radio" name="slide" id="login" checked>
+                        <input type="radio" name="slide" id="signup">
+                        <label for="login" class="slide login">Login</label>
+                        <label for="signup" class="slide signup">Signup</label>
+                        <div class="slider-tab"></div>
+                    </div>
+                    <div class="form-inner">
+                        <form action="#" class="login">
+                            <div class="field">
+                                <input type="text" id="email-input" placeholder="Email Address" required>
+                            </div>
+                            <div class="field">
+                                <input type="password" id="password-input" placeholder="Password" required>
+                            </div>
+                            <div class="pass-link">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                            <div class="field btn">
+                                <div class="btn-layer"></div>
+                                <input type="submit" onclick="signup(document.getElementById('email-input').target.value,document.getElementById('password-input').target.value)" value="Login">
+                            </div>
+                            <div class="signup-link">
+                                Not a member? <a href="">Signup now</a>
+                            </div>
+                        </form>
+                        <form action="#" class="signup">
+                            <div class="field">
+                                <input type="text" id="email-input-signup"placeholder="Email Address" required>
+                            </div>
+                            <div class="field">
+                                <input type="password" id="password-input-signup" placeholder="Password" required>
+                            </div>
+                            <div class="field">
+                                <input type="password" id="password-confirm-signup" placeholder="Confirm password" required>
+                            </div>
+                            <div class="field btn">
+                                <div class="btn-layer"></div>
+                                <input type="submit" value="Signup">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-
-        <div class="text-center m-5">
-            <h1> Categories of The Month </h1>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
-            <div class="text-center">
-                <img width="200" height="200" src="images/2.jpg" class="rounded-circle float-center" alt="...">
+        <div class="main-content">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
 
@@ -114,10 +158,17 @@
         <p>©2022 HackBuck | All Rights Reserved</p>
 
     </footer>
+            
+    <!------------------------------------------------INI FOOTER BOSSS------------------------------------------------------------------------------>
+    </div>
     <!-- script footer icon-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- script footer icon-->
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
 
 
