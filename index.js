@@ -1,14 +1,14 @@
 
 let dbItem = [
-    {namaItem: "Hack Americano", harga: 10000, img: "#", promo: false},
-    {namaItem: "Hack Americano", harga: 10000, img: "#", promo: false},
-    {namaItem: "Hack Americano", harga: 10000, img: "#", promo: false},
-    {namaItem: "Hack Americano", harga: 10000, img: "#", promo: false},
+    {id: 1, namaItem: "Hack Americano", harga: 10000, img: "#", promo: false},
+    {id: 2, namaItem: "item2", harga: 15000, img: "#", promo: false},
+    {id: 3, namaItem: "item3", harga: 20000, img: "#", promo: false},
+    {id: 4, namaItem: "item4", harga: 25000, img: "#", promo: false},
 ]
 
 
 let dbUser = {
-    dodol: {password: "rahasia", email: "tonni.lius26@gmail.com",type: "admin"}
+    dodol: {password: "rahasia", email: "tonni.lius26@gmail.com", type: "admin"},
 }
 function hide(param) {
   document.getElementById(param).style.display = 'none'
@@ -35,11 +35,19 @@ function addToPromoCart(){
   })
 }
 
-let inputUser = document.getElementById(user-input)
-let inputPassword = document.getElementById(password-input)
-let inputEmail = document.getElementById(email-input)
+let inputUser = document.getElementById("user-input")
+let inputPassword = document.getElementById("password-input")
+let inputEmail = document.getElementById("email-input")
 
 function signUp(inputUser, inputPassword, inputEmail){
+    if (!inputUser){
+        alert("Mohon masukan user")
+    }else if (!inputPassword){
+        alert("Mohon masukan password")
+    }else if (!inputEmail){
+        alert("Mohon masukan email")
+    }
+    
     if (dbUser[inputUser]){
         alert("User sudah ada, mohon gunakan user lain")
     }else {
@@ -51,18 +59,19 @@ function signUp(inputUser, inputPassword, inputEmail){
     }
 }
 
-let namaItemInput = document.getElementById(nama-item-input)
-let hargaInput = document.getElementById(harga-input)
-let imgInput = document.getElementById(img-input)
+let selectedId = document.getElementById("selected-id")
+let namaItemInput = document.getElementById("nama-item-input")
+let hargaInput = document.getElementById("harga-input")
+let imgInput = document.getElementById("img-input")
 
 function addItem(namaItemInput, hargaInput, imgInput){
-    dbItem.push({namaItem: namaItemInput, harga: hargaInput, img: imgInput, promo: false})
+    dbItem.push({id: dbItem.length+1, namaItem: namaItemInput, harga: hargaInput, img: imgInput, promo: false})
 }
 
-function addPromo(namaItemInput){
+function addPromo(selectedId){
     dbItem.map((item)=>{
-        const {name, harga, image, promo} = item
-        if (namaItemInput === name){
+        const {id, name, harga, image, promo} = item
+        if (selectedId === id){
             promo = true
             item["hargaPromo"] = (50/100)*harga
         }
@@ -70,20 +79,20 @@ function addPromo(namaItemInput){
     })
 }
 
-function removePromo(namaItemInput){
+function removePromo(selectedId){
     dbItem.map((item)=>{
-        const {name, harga, image, promo, hargaPromo} = item
-        if (namaItemInput === name){
+        const {id, name, harga, image, promo, hargaPromo} = item
+        if (selectedId === id){
             promo = false
             delete hargaPromo
         }
     })
 }
 
-function editItem(namaItemInput, hargaInput, imgInput){
+function editItem(selectedId, namaItemInput, hargaInput, imgInput){
     dbItem.map((item)=>{
-        const {name, harga, image, promo} = item
-        if (namaItemInput === name){
+        const {id, name, harga, image, promo} = item
+        if (selectedId === id){
             name = namaItemInput
             harga = hargaInput
             image = imgInput
@@ -91,10 +100,10 @@ function editItem(namaItemInput, hargaInput, imgInput){
     })
 }
 
-function deleteItem(namaItemInput){
+function deleteItem(selectedId){
     dbItem.map((item)=>{
-        const {name, harga, image, promo} = item
-        if (namaItemInput === name){
+        const {id, name, harga, image, promo} = item
+        if (selectedId === id){
             delete item
         }        
     })
