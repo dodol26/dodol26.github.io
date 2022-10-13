@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let dbItem = [
     {namaItem: "Hack Americano", harga: 10000, img: "#", promo: false}
 ]
@@ -6,7 +5,6 @@ let dbItem = [
 let dbUser = {
     dodol: {password: "rahasia", email: "tonni.lius26@gmail.com",type: "admin"}
 }
-=======
 function hide(param) {
   document.getElementById(param).style.display = 'none'
 }
@@ -18,4 +16,3 @@ function show(param) {
     document.getElementById(param).style.display = 'block'
   }
 }
->>>>>>> 8a4d2218ca6e883d424ac095a01d053e8db16af1
