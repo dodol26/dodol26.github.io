@@ -22,6 +22,9 @@ function show(param) {
   }
 }
 
+let inputUser = document.getElementById("user-input")
+let inputPassword = document.getElementById("password-input")
+let inputEmail = document.getElementById("email-input")
 function addToPromoCart(){
   let addToCartPromo = document.createElement('div')
   let pictureProduct = document.createElement('div')
@@ -47,7 +50,7 @@ function signUp(inputUser, inputPassword, inputEmail){
     }else if (!inputEmail){
         alert("Mohon masukan email")
     }
-    
+
     if (dbUser[inputUser]){
         alert("User sudah ada, mohon gunakan user lain")
     }else {
@@ -81,7 +84,7 @@ function addPromo(selectedId){
 
 function removePromo(selectedId){
     dbItem.map((item)=>{
-        const {id, name, harga, image, promo, hargaPromo} = item
+      const {id, name, harga, image, promo, hargaPromo} = item
         if (selectedId === id){
             promo = false
             delete hargaPromo
@@ -91,7 +94,7 @@ function removePromo(selectedId){
 
 function editItem(selectedId, namaItemInput, hargaInput, imgInput){
     dbItem.map((item)=>{
-        const {id, name, harga, image, promo} = item
+      const {id, name, harga, image, promo} = item
         if (selectedId === id){
             name = namaItemInput
             harga = hargaInput
@@ -102,7 +105,7 @@ function editItem(selectedId, namaItemInput, hargaInput, imgInput){
 
 function deleteItem(selectedId){
     dbItem.map((item)=>{
-        const {id, name, harga, image, promo} = item
+      const {id, name, harga, image, promo} = item
         if (selectedId === id){
             delete item
         }        
