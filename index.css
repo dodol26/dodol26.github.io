@@ -210,11 +210,12 @@ footer {
     position: relative;
     width: 100%;
     background: #3586ff;
-    min-height: 100px;
+    min-height: 50px;
     padding: 20px 50px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transform: translateY(150px);
 }
 footer .social-icon, footer .menu {
     position: relative;
