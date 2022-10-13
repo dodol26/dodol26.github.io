@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 let dbItem = [
     {namaItem: "Hack Americano", harga: 10000, img: "#", promo: false}
 ]
@@ -19,4 +17,3 @@ function show(param) {
     document.getElementById(param).style.display = 'block'
   }
 }
->>>>>>> a41dedf5ade8a3aad449d08aa723d58e782da866
