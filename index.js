@@ -17,6 +17,19 @@ function show(param) {
   }
 }
 
+function addToPromoCart(){
+  let addToCartPromo = document.createElement('div')
+  let pictureProduct = document.createElement('div')
+  dbItem.map((item) =>{
+    const {nama,harga,img,promo} = item
+    pictureProduct.setAttribute('width','100%')
+    pictureProduct.style.background = `${img}`
+    addToCartPromo.appendChild(pictureProduct)
+    addToCartPromo.innerHTML = `<div>${nama}</div>`  
+    addToCartPromo.innerHTML = `<div>${harga}</div>`  
+  })
+}
+
 let inputUser = document.getElementById(user-input)
 let inputPassword = document.getElementById(password-input)
 let inputEmail = document.getElementById(email-input)
