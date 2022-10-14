@@ -258,6 +258,7 @@ footer .wave {
     height: 50px;
     background:  url(wave.png);
     background-size: 1000px 55px;
+    color: #c07bd1
 }
 footer .wave#wave1 {
     z-index: 1000;
