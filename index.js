@@ -7,6 +7,8 @@ let dbItem = [
   { id: 5, namaItem: "item5 ", harga: 25000, img: "./Produk-unggulan/slider_part_2.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
 ]
 
+let dbCart = []
+
 dbItem.map((item) => {
   const { id, namaItem, harga, img, promo, desc, quantity } = item
 
@@ -31,7 +33,8 @@ dbItem.map((item) => {
 })
 
 let dbUser = [
-  { email: "tonni.lius26@gmail.com", password: "rahasia", type: "admin" }
+  { email: "tonni.lius26@gmail.com", password: "rahasia", type: "admin" },
+  { email: "tonni_lius@yahoo.com", password: "rahasia", type: "member" }
 ]
 
 function hide(param) {
@@ -161,15 +164,13 @@ function checkLogin(inputEmail, inputPassword) {
       const { email, password, type } = item
       if (inputEmail === email) {
         if (inputPassword === password) {
-          // if (type === "admin"){
-          //     show("admin")
-          // }
-          alert("Login Berhasil")
+          if (type === "admin"){
+              show("admin-add-item")
+          }
+          alert("Login berhasil")
         } else {
           alert("Password salah")
         }
-      } else {
-        alert("Email tidak ditemukan")
       }
     })
   }
@@ -211,18 +212,64 @@ function addToCart(param) {
   total.style.display = 'flex'
   total.innerHTML = `<div style="margin-right:25px;color:blue;fontw-weight:700;">Price</div>
 <span class="price" style="color:black;margin-right:150px;"><b>Rp${totalBill}</b></span>
-<span class="price" style="color:black;font-size:1rem;"><b>${quantity}</b></span>`
+<span class="price" style="color:black;font-size:1rem;"><b id="total">${quantity}</b></span>`
   document.querySelector('.container-checkout').appendChild(total)
   klik++
-
+  
   if (klik === 5) {
-    let checkout = document.createElement('button')
-    checkout.style.width = "100px"
-    checkout.style.margin = "35px 0"
-    checkout.style.height = "50px"
-    checkout.style.backgroundColor = "pink"
-    checkout.innerText = 'CHECKOUT'
+    alert("Keranjang Penuh")
+  }
+}
 
-    document.querySelector('.container-checkout').appendChild(checkout)
+let checkout = document.createElement('button')
+checkout.style.width = "100px"
+checkout.classList.add("checkout-btn")
+checkout.style.margin = "35px 0"
+checkout.style.height = "50px"
+checkout.style.backgroundColor = "pink"
+checkout.innerText = 'CHECKOUT'
+
+document.querySelector('.container-checkout').appendChild(checkout)
+document.querySelector(".checkout-btn").addEventListener("click", function (){
+  if (klik === 0){
+    alert("Mohon masukan item ke keranjang")
+  }else {
+    document.querySelector(".checkout-wrapper").style.display = "none"
+    alert("Transaksi berhasil")
+  }
+
+})
+
+function addItem(idBarang, namaBarang, hargaBarang, imgBarang){
+  if (!idBarang || !namaBarang || !hargaBarang || !imgBarang){
+      alert("Mohon lengkapi data")
+  }else {
+      dbItem.push({
+          id: idBarang,
+          namaItem: namaBarang,
+          harga: Number(hargaBarang),
+          img: imgBarang,
+          promo: false
+      })
+
+      let productCard = document.createElement('div')
+  productCard.classList.add('card')
+  productCard.classList.add('shadow')
+  productCard.style.width = "18rem"
+  productCard.style.margin = "0 5px"
+  productCard.style.borderRadius = "10px"
+  productCard.innerHTML =
+    `<img src="${imgBarang}" class="card-img-top" style="height:250px;" alt="...">
+  <div class="card-body d-flex align-items-center" id="${idBarang}" style="flex-direction:column;">
+      <h5 class="card-title">${namaBarang}</h5> 
+      <p class="card-text" style="font-weight:700;">Rp ${hargaBarang}</p>
+      <p class="card-text">kopi yang berasa kopi</p>
+      <a class="btn btn-outline-info" style="float:right" id="add-cart" onclick="addToCart(${idBarang})"> Add to cart <i class="fa fa-cart-plus"
+              aria-hidden="true"></i></a>
+  </div>
+`
+  document.getElementById('card-wrapper').appendChild(productCard)
+
+      console.log(dbItem)
   }
 }

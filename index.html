@@ -37,7 +37,7 @@
                         <a class="nav-link link-primary active" aria-current="page" href="#"> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="show('form-inpt')"> Signup or Login </a>
+                        <a class="nav-link active" href="#" onclick="show('form-inpt')" id="nav-signin-up"> Signup or Login </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active"> Promo </a>
@@ -51,7 +51,7 @@
     </nav>
     </header>
     <!---------------------------------------------------------INI MAIN CONTENT-------------------------------------------------------------------->
-    <div class="container" style="padding:20px 0 ;">
+    <div class="container" style="padding:20px 0 ;" >
         <div class='registerDanLogin mb-5' id="form-inpt"
             style="display:none;align-items:center; justify-content: center;">
             <div class="wrapper" style=" width: 80%;">
@@ -174,23 +174,31 @@
     </div>
 
     <!-- admin checkout user -->
-    <div style="background-color:#b1e2fc" class="p-5">
+    <div style="background-color:#b1e2fc" class="p-5" id="admin-add-item">
         <div class="">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-4 mb-3">
                     <label class="form-label"> Id Barang </label>
                     <input class="form-control form-control-sm" type="text" placeholder="your id barang"
-                        aria-label=".form-control-sm example">
+                        aria-label=".form-control-sm example" id="idBarang">
                 </div>
                 <div class="col-sm-4 mb-3">
                     <label for="exampleDataList" class="form-label"> Nama Barang </label>
                     <input class="form-control form-control-sm" type="text" placeholder="Nama barang"
-                        aria-label=".form-control-sm example">
+                        aria-label=".form-control-sm example" id="namaBarang">
                 </div>
                 <div class="col-sm-8">
                     <label for="exampleDataList" class="form-label"> Harga Barang </label>
                     <input class="form-control form-control-sm" type="text" placeholder="Harga barang"
-                        aria-label=".form-control-sm example">
+                        aria-label=".form-control-sm example" id="hargaBarang">
+                </div>
+                <div class="col-sm-8">
+                    <label for="exampleDataList" class="form-label"> Harga Barang </label>
+                    <input class="form-control form-control-sm" type="text" placeholder="URL image"
+                        aria-label=".form-control-sm example" id="imgBarang">
+                </div>
+                <div>
+                    <button id="add-item-btn" onClick="addItem(document.getElementById('idBarang').value,document.getElementById('namaBarang').value,document.getElementById('hargaBarang').value,document.getElementById('imgBarang').value)">Save</button>
                 </div>
             </div>
         </div>
