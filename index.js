@@ -14,7 +14,7 @@ dbItem.map((item) => {
   productCard.classList.add('card')
   productCard.classList.add('shadow')
   productCard.style.width = "18rem"
-  productCard.style.margin = "0 5px"
+  productCard.style.margin = "0 5px"  
   productCard.style.borderRadius = "10px"
   productCard.innerHTML =
     `<img src="${img}" class="card-img-top" style="height:250px;" alt="...">
@@ -206,7 +206,6 @@ function addToCart(param) {
       totalBill += harga
       quantity++
     }
-
     return quantity
   })
   let total = document.createElement('div')
