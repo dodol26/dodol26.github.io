@@ -42,8 +42,8 @@ function show(param) {
   document.getElementById(param).style.display = 'flex'
 }
 
-let inputPassword = document.getElementById("password-input").value
-let inputEmail = document.getElementById("email-input").value
+let inputPassword = document.getElementById("password-input-signup").value
+let inputEmail = document.getElementById("email-input-signup").value
 
 function signUp(inputEmail, inputPassword, confirmPassword) {
   if (!inputEmail && !inputPassword && !confirmPassword) {
@@ -158,8 +158,10 @@ function checkLogin(inputEmail, inputPassword) {
     alert("Mohon masukan password anda")
   } else {
     dbUser.map((item) => {
+      let emailExist = ""
       const { email, password, type } = item
-      if (inputEmail === email) {
+      emailExist = email
+      if (inputEmail === emailExist) {
         if (inputPassword === password) {
           // if (type === "admin"){
           //     show("admin")
