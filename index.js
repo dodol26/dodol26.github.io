@@ -22,26 +22,39 @@ function show(param) {
   }
 }
 
-let inputUser = document.getElementById("user-input")
-let inputPassword = document.getElementById("password-input")
-let inputEmail = document.getElementById("email-input")
+let inputUser = document.getElementById("input-user")
+let inputPassword = document.getElementById("input-password")
+let inputEmail = document.getElementById("input-email")
 
-function signUp(inputUser, inputPassword, inputEmail){
-    if (!inputUser){
+function signUp(){
+    let inputUser = document.getElementById("input-user").value
+    let inputPassword = document.getElementById("input-password").value
+    let inputEmail = document.getElementById("input-email").value
+
+    if (!inputUser && !inputPassword && !inputEmail){
+        alert("Invalid input")
+    }else if (!inputUser && !inputPassword){
+        alert("Mohon masukan user dan password")
+    }else if (!inputUser && !inputEmail){
+        alert("Mohon masukan user dan email")
+    }else if (!inputPassword && !inputEmail){
+        alert("Mohon masukan password dan email")
+    }else if (!inputUser){
         alert("Mohon masukan user")
     }else if (!inputPassword){
         alert("Mohon masukan password")
     }else if (!inputEmail){
         alert("Mohon masukan email")
-    }
-
-    if (dbUser[inputUser]){
-        alert("User sudah ada, mohon gunakan user lain")
     }else {
-        dbUser[inputUser] = {
-            password: inputPassword,
-            email: inputEmail,
-            type: "member",
+        if (dbUser[inputUser]){
+            alert("User sudah terpakai, mohon gunakan user lain")
+        }else {
+            dbUser[inputUser] = {
+                password: inputPassword,
+                email: inputEmail,
+                type: "member"
+            }
+            alert("Berhasil")
         }
     }
 }
@@ -112,3 +125,36 @@ signupLink.onclick = (() => {
     signupBtn.click();
     return false;
 });
+
+function checkLogin(){
+    let inputUser = document.getElementById("input-user").value
+    let inputPassword = document.getElementById("input-password").value
+
+    if (!inputUser && !inputPassword){
+        alert("Invalid input")
+    }else if (!inputUser){
+        alert("Mohon masukan user anda")
+    }else if (!inputPassword){
+        alert("Mohon masukan password anda")
+    }else{
+        if (dbUser[inputUser]){
+            if (inputPassword === dbUser[inputUser].password){
+                if (dbUser[inputUser].type === "admin"){
+                    document.getElementsByClassName("for-admin").style.display = "block"
+                }else {
+                    document.getElementsByClassName("for-member").style.display = "block"
+                }
+                loginButton.innerText = "logout"
+                loginButton.setAttribute("onClick", "logOut()")
+                loginForm.style.display = "none"
+                signupButton.style.display = "none"
+                emailForm.style.display = "none"
+                alert("Berhasil login")
+            }else {
+                alert("Password salah")
+            }
+        }else {
+            alert("User tidak ditemukan")
+        }
+    }
+}
