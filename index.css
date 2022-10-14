@@ -320,3 +320,7 @@ footer .wave#wave4 {
 }
 /* ini css footer */
 
+#admin-add-item{
+  display: none;
+  justify-content: center;
+}
