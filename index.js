@@ -8,7 +8,7 @@ let dbItem = [
 ]
 
 dbItem.map((item) => {
-  const { id, namaItem, harga, img, promo, desc } = item
+  const { id, namaItem, harga, img, promo, desc,quantity } = item
 
   let productCard = document.createElement('div')
   productCard.classList.add('card')
@@ -92,7 +92,7 @@ function addItem(namaItemInput, hargaInput, imgInput) {
 
 function addPromo(selectedId) {
   dbItem.map((item) => {
-    const { id, name, harga, image, promo } = item
+    const { id, name, harga, image, promo,quantity } = item
     if (selectedId === id) {
       promo = true
       item["hargaPromo"] = (50 / 100) * harga
@@ -113,7 +113,7 @@ function removePromo(selectedId) {
 
 function editItem(selectedId, namaItemInput, hargaInput, imgInput) {
   dbItem.map((item) => {
-    const { id, name, harga, image, promo } = item
+    const { id, name, harga, image, promo,quantity } = item
     if (selectedId === id) {
       name = namaItemInput
       harga = hargaInput
@@ -124,7 +124,7 @@ function editItem(selectedId, namaItemInput, hargaInput, imgInput) {
 
 function deleteItem(selectedId) {
   dbItem.map((item) => {
-    const { id, name, harga, image, promo } = item
+    const { id, name, harga, image, promo,quantity } = item
     if (selectedId === id) {
       delete item
     }
@@ -192,7 +192,7 @@ function checkLogin(inputEmail, inputPassword) {
     }
     bill.style.marginTop = '15px'
     dbItem.map((item) => {
-      const { id, namaItem, harga, img, promo, desc } = item
+      const { id, namaItem, harga, img, promo, desc,quantity } = item
       if (id === param) {
         bill.innerHTML =
           `<p style="margin-right:auto;font-weight:700;" class="nama-item">${namaItem}</p>
