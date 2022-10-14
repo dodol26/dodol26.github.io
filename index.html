@@ -34,10 +34,11 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link link-primary active"  href="#" style="color:black !important;"> Home </a>
+                        <a class="nav-link link-primary active" href="#" style="color:black !important;"> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="show('form-inpt')" id="nav-signin-up"> Signup or Login </a>
+                        <a class="nav-link active" href="#" onclick="show('form-inpt')" id="nav-signin-up"> Signup or
+                            Login </a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link active navbar1"> Promo </a>
@@ -45,13 +46,13 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" id="search-submit"type="submit">Search</button>
+                    <button class="btn btn-outline-success" id="search-submit" type="submit">Search</button>
                 </form>
             </div>
     </nav>
     </header>
     <!---------------------------------------------------------INI MAIN CONTENT-------------------------------------------------------------------->
-    <div class="container" style="padding:20px 0 ;" >
+    <div class="container" style="padding:20px 0 ;">
         <div class='registerDanLogin mb-5' id="form-inpt"
             style="display:none;align-items:center; justify-content: center;">
             <div class="wrapper" style=" width: 80%;">
@@ -105,39 +106,25 @@
                             <div class="field btn">
                                 <div class="btn-layer"></div>
                                 <input type="submit"
-                                onClick="signUp(document.getElementById('email-input-signup').value,document.getElementById('password-input-signup').value,document.getElementById('password-confirm-signup').value)">
+                                    onClick="signUp(document.getElementById('email-input-signup').value,document.getElementById('password-input-signup').value,document.getElementById('password-confirm-signup').value)">
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="main-content" style="display:flex; flex-direction:column;">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        <section class="home" id="home" style="display: flex;">
+            <div class="home-text">
+                <span>Welcome To </span>
+                <h1>HackBucks Coffee</h1>
+                <h2>Discount Coffee is a <br> tap away</h2>
+                <a href="#" class="btn">Join Now</a>
             </div>
-        </div>
-        <div id="card-wrapper" style="display: flex;">
+            <div class="home-img">
+                <img src="./Produk-unggulan/slider_part_1.png"alt="">
+            </div>
+        </section>
+        <div id="card-wrapper" style="display: flex;flex-wrap: wrap;">
 
         </div>
         <div class="checkout-wrapper"
@@ -174,7 +161,7 @@
     </div>
 
     <!-- admin checkout user -->
-    <div style="background-color:#b1e2fc;display: none;" class="p-5" id="form-edit">
+    <div style="background-color:#b1e2fc;display: none;justify-content: center;" class="p-5" id="form-edit">
         <div class="">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-4 mb-3">
@@ -198,7 +185,10 @@
                         aria-label=".form-control-sm example" id="imgBarang">
                 </div>
                 <div>
-                    <button id="add-item-btn" onClick="addItem(document.getElementById('idBarang').value,document.getElementById('namaBarang').value,document.getElementById('hargaBarang').value,document.getElementById('imgBarang').value)">Save</button>
+                    <button id="add-item-btn"
+                        onClick="addItem(document.getElementById('idBarang').value,document.getElementById('namaBarang').value,document.getElementById('hargaBarang').value,document.getElementById('imgBarang').value)">Save</button>
+                    <button style="width: 45px;height:30px;margin-left: auto;" id="close-edit"
+                        onclick="closeAddItemForm()">X</button>
                 </div>
             </div>
         </div>

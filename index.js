@@ -5,6 +5,11 @@ let dbItem = [
   { id: 3, namaItem: "item3", harga: 20000, img: "./Produk-unggulan/slider_part_1.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
   { id: 4, namaItem: "item4", harga: 25000, img: "./Produk-unggulan/slider_part_2.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
   { id: 5, namaItem: "item5 ", harga: 25000, img: "./Produk-unggulan/slider_part_2.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
+  { id: 6, namaItem: "arenbucks", harga: 22000, img: "./Produk-unggulan/arenbucks- 22_000.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
+  { id: 7, namaItem: "caramelino", harga: 26000, img: "./Produk-unggulan/caramelino - 26_000.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
+  { id: 8, namaItem: "holla-vanilla", harga: 30000, img: "./Produk-unggulan/Holla vanilla - 30_000.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
+  { id: 9, namaItem: "item9 ", harga: 28000, img: "./Produk-unggulan/eightpuccino-28_000.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
+  { id: 10, namaItem: "item10 ", harga: 28000, img: "./Produk-unggulan/sweetyluxie - 28_0000.png", promo: false, desc: 'kopi yang berasa kopi', quantity: 0 },
 ]
 
 let dbCart = []
@@ -16,7 +21,7 @@ dbItem.map((item) => {
   productCard.classList.add('card')
   productCard.classList.add('shadow')
   productCard.style.width = "18rem"
-  productCard.style.margin = "0 5px"  
+  productCard.style.margin = "0 5px"
   productCard.style.borderRadius = "10px"
   productCard.innerHTML =
     `<img src="${img}" class="card-img-top" style="height:250px;" alt="...">
@@ -166,8 +171,8 @@ function checkLogin(inputEmail, inputPassword) {
       emailExist = email
       if (inputEmail === emailExist) {
         if (inputPassword === password) {
-          if (type === "admin"){
-              show("admin-add-item")
+          if (type === "admin") {
+            show("form-edit")
           }
           alert("Login berhasil")
         } else {
@@ -216,7 +221,7 @@ function addToCart(param) {
 <span class="price" style="color:black;font-size:1rem;"><b id="total">${quantity}</b></span>`
   document.querySelector('.container-checkout').appendChild(total)
   klik++
-  
+
   if (klik === 5) {
     alert("Keranjang Penuh")
   }
@@ -231,36 +236,36 @@ checkout.style.backgroundColor = "pink"
 checkout.innerText = 'CHECKOUT'
 
 document.querySelector('.container-checkout').appendChild(checkout)
-document.querySelector(".checkout-btn").addEventListener("click", function (){
-  if (klik === 0){
+document.querySelector(".checkout-btn").addEventListener("click", function () {
+  if (klik === 0) {
     alert("Mohon masukan item ke keranjang")
-  }else {
+  } else {
     document.querySelector(".checkout-wrapper").style.display = "none"
     alert("Transaksi berhasil")
   }
 
 })
 
-function addItem(idBarang, namaBarang, hargaBarang, imgBarang){
-  if (!idBarang || !namaBarang || !hargaBarang || !imgBarang){
-      alert("Mohon lengkapi data")
-  }else {
-      dbItem.push({
-          id: idBarang,
-          namaItem: namaBarang,
-          harga: Number(hargaBarang),
-          img: imgBarang,
-          promo: false
-      })
+function addItem(idBarang, namaBarang, hargaBarang, imgBarang) {
+  if (!idBarang || !namaBarang || !hargaBarang || !imgBarang) {
+    alert("Mohon lengkapi data")
+  } else {
+    dbItem.push({
+      id: idBarang,
+      namaItem: namaBarang,
+      harga: Number(hargaBarang),
+      img: imgBarang,
+      promo: false
+    })
 
-      let productCard = document.createElement('div')
-  productCard.classList.add('card')
-  productCard.classList.add('shadow')
-  productCard.style.width = "18rem"
-  productCard.style.margin = "0 5px"
-  productCard.style.borderRadius = "10px"
-  productCard.innerHTML =
-    `<img src="${imgBarang}" class="card-img-top" style="height:250px;" alt="...">
+    let productCard = document.createElement('div')
+    productCard.classList.add('card')
+    productCard.classList.add('shadow')
+    productCard.style.width = "18rem"
+    productCard.style.margin = "0 5px"
+    productCard.style.borderRadius = "10px"
+    productCard.innerHTML =
+      `<img src="${imgBarang}" class="card-img-top" style="height:250px;" alt="...">
   <div class="card-body d-flex align-items-center" id="${idBarang}" style="flex-direction:column;">
       <h5 class="card-title">${namaBarang}</h5> 
       <p class="card-text" style="font-weight:700;">Rp ${hargaBarang}</p>
@@ -269,8 +274,11 @@ function addItem(idBarang, namaBarang, hargaBarang, imgBarang){
               aria-hidden="true"></i></a>
   </div>
 `
-  document.getElementById('card-wrapper').appendChild(productCard)
+    document.getElementById('card-wrapper').appendChild(productCard)
 
-      console.log(dbItem)
   }
+}
+
+function closeAddItemForm() {
+  document.getElementById('form-edit').style.display = "none"
 }
