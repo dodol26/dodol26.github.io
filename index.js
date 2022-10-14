@@ -14,7 +14,7 @@ dbItem.map((item) => {
   productCard.classList.add('card')
   productCard.classList.add('shadow')
   productCard.style.width = "18rem"
-  productCard.style.margin = "0 5px"
+  productCard.style.margin = "0 5px"  
   productCard.style.borderRadius = "10px"
   productCard.innerHTML =
     `<img src="${img}" class="card-img-top" style="height:250px;" alt="...">
@@ -42,8 +42,8 @@ function show(param) {
   document.getElementById(param).style.display = 'flex'
 }
 
-let inputPassword = document.getElementById("password-input").value
-let inputEmail = document.getElementById("email-input").value
+let inputPassword = document.getElementById("password-input-signup").value
+let inputEmail = document.getElementById("email-input-signup").value
 
 function signUp(inputEmail, inputPassword, confirmPassword) {
   if (!inputEmail && !inputPassword && !confirmPassword) {
@@ -158,8 +158,10 @@ function checkLogin(inputEmail, inputPassword) {
     alert("Mohon masukan password anda")
   } else {
     dbUser.map((item) => {
+      let emailExist = ""
       const { email, password, type } = item
-      if (inputEmail === email) {
+      emailExist = email
+      if (inputEmail === emailExist) {
         if (inputPassword === password) {
           // if (type === "admin"){
           //     show("admin")
@@ -204,7 +206,6 @@ function addToCart(param) {
       totalBill += harga
       quantity++
     }
-
     return quantity
   })
   let total = document.createElement('div')
