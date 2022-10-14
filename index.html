@@ -34,7 +34,7 @@
                         <a class="nav-link link-primary active" aria-current="page" href="#"> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="show('form-inpt')"> Signup & Login </a>
+                        <a class="nav-link active" href="#" onclick="show('form-inpt')"> Signup or Login </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active"> Promo </a>
@@ -83,8 +83,7 @@
                             <div class="field btn">
                                 <div class="btn-layer"></div>
                                 <input type="submit"
-                                    onclick="signup(document.getElementById('email-input').target.value,document.getElementById('password-input').target.value)"
-                                    value="Login">
+                                    onClick="checkLogin(document.getElementById('email-input').value,document.getElementById('password-input').value)">
                             </div>
                             <div class="signup-link">
                                 Not a member? <a href="">Signup now</a>
@@ -103,7 +102,8 @@
                             </div>
                             <div class="field btn">
                                 <div class="btn-layer"></div>
-                                <input type="submit" value="Signup">
+                                <input type="submit"
+                                onClick="signUp(document.getElementById('email-input-signup').value,document.getElementById('password-input-signup').value,document.getElementById('password-confirm-signup').value)">
                             </div>
                         </form>
                     </div>
