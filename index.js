@@ -23,9 +23,6 @@ dbItem.map((item) => {
       <h5 class="card-title">${namaItem}</h5> 
       <p class="card-text">${harga}</p>
       <p class="card-text">${desc}</p>
-      <a href="#" class="btn btn-outline-danger"> <i class="fa fa-minus" aria-hidden="true"></i>
-      </a>
-      <a href="#" class="btn btn-outline-success"> <i class="fa fa-plus" aria-hidden="true"></i> </a>
       <a href="#" class="btn btn-outline-info" style="float:right"> Add to cart <i class="fa fa-cart-plus"
               aria-hidden="true"></i></a>
   </div>
