@@ -8,7 +8,7 @@ let dbItem = [
 ]
 
 dbItem.map((item) => {
-  const { id, namaItem, harga, img, promo, desc,quantity } = item
+  const { id, namaItem, harga, img, promo, desc, quantity } = item
 
   let productCard = document.createElement('div')
   productCard.classList.add('card')
@@ -92,7 +92,7 @@ function addItem(namaItemInput, hargaInput, imgInput) {
 
 function addPromo(selectedId) {
   dbItem.map((item) => {
-    const { id, name, harga, image, promo,quantity } = item
+    const { id, name, harga, image, promo, quantity } = item
     if (selectedId === id) {
       promo = true
       item["hargaPromo"] = (50 / 100) * harga
@@ -113,7 +113,7 @@ function removePromo(selectedId) {
 
 function editItem(selectedId, namaItemInput, hargaInput, imgInput) {
   dbItem.map((item) => {
-    const { id, name, harga, image, promo,quantity } = item
+    const { id, name, harga, image, promo, quantity } = item
     if (selectedId === id) {
       name = namaItemInput
       harga = hargaInput
@@ -124,7 +124,7 @@ function editItem(selectedId, namaItemInput, hargaInput, imgInput) {
 
 function deleteItem(selectedId) {
   dbItem.map((item) => {
-    const { id, name, harga, image, promo,quantity } = item
+    const { id, name, harga, image, promo, quantity } = item
     if (selectedId === id) {
       delete item
     }
@@ -174,54 +174,55 @@ function checkLogin(inputEmail, inputPassword) {
     })
   }
 
-  let klik = 0
-  function addToCart(param) {
-    let totalBill = 0
-    let quantity = 0
-    let bill = document.createElement('div')
-    bill.classList.add('list-bill')
-    bill.style.display = 'flex'
-    function deleteFromBills(param) {
-      let quantity = addToCart(param)
-      quantity--
-    }
+}
 
-    function addToBills(param) {
-      let quantity = addToCart(param)
-      quantity++
-    }
-    bill.style.marginTop = '15px'
-    dbItem.map((item) => {
-      const { id, namaItem, harga, img, promo, desc,quantity } = item
-      if (id === param) {
-        bill.innerHTML =
-          `<p style="margin-right:auto;font-weight:700;" class="nama-item">${namaItem}</p>
+let klik = 0
+function addToCart(param) {
+  let totalBill = 0
+  let quantity = 0
+  let bill = document.createElement('div')
+  bill.classList.add('list-bill')
+  bill.style.display = 'flex'
+  function deleteFromBills(param) {
+    let quantity = addToCart(param)
+    quantity--
+  }
+
+  function addToBills(param) {
+    let quantity = addToCart(param)
+    quantity++
+  }
+  bill.style.marginTop = '15px'
+  dbItem.map((item) => {
+    const { id, namaItem, harga, img, promo, desc } = item
+    if (id === param) {
+      bill.innerHTML =
+        `<p style="margin-right:auto;font-weight:700;" class="nama-item">${namaItem}</p>
     <a class="btn btn-danger" style="font-size:0.75rem;height:25px;" onclick="deleteFromBills(${namaItem})">-</a>
     <a class="btn btn-success" style="font-size:0.75rem;height:25px;"  onclick="addToBills(${namaItem})">+</a>`
-        document.querySelector('.container-checkout').appendChild(bill)
-        totalBill += harga
-        quantity++
-      }
+      document.querySelector('.container-checkout').appendChild(bill)
+      totalBill += harga
+      quantity++
+    }
 
-      return quantity
-    })
-    let total = document.createElement('div')
-    total.style.display = 'flex'
-    total.innerHTML = `<div style="margin-right:25px;color:blue;fontw-weight:700;">Price</div>
+    return quantity
+  })
+  let total = document.createElement('div')
+  total.style.display = 'flex'
+  total.innerHTML = `<div style="margin-right:25px;color:blue;fontw-weight:700;">Price</div>
 <span class="price" style="color:black;margin-right:150px;"><b>Rp${totalBill}</b></span>
 <span class="price" style="color:black;font-size:1rem;"><b>${quantity}</b></span>`
-    document.querySelector('.container-checkout').appendChild(total)
-    klik++
+  document.querySelector('.container-checkout').appendChild(total)
+  klik++
 
-    if (klik === 5) {
-      let checkout = document.createElement('button')
-      checkout.style.width = "100px"
-      checkout.style.margin = "35px 0"
-      checkout.style.height = "50px"
-      checkout.style.backgroundColor = "pink"
-      checkout.innerText = 'CHECKOUT'
+  if (klik === 5) {
+    let checkout = document.createElement('button')
+    checkout.style.width = "100px"
+    checkout.style.margin = "35px 0"
+    checkout.style.height = "50px"
+    checkout.style.backgroundColor = "pink"
+    checkout.innerText = 'CHECKOUT'
 
-      document.querySelector('.container-checkout').appendChild(checkout)
-    }
+    document.querySelector('.container-checkout').appendChild(checkout)
   }
 }
