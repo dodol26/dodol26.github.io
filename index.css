@@ -202,7 +202,7 @@ form .btn input[type="submit"]{
 footer {
     position: relative;
     width: 100%;
-    background: #c07bd1;
+    background: #FF2600;
     min-height: 40px;
     padding: 20px 50px;
     justify-content: center;
@@ -247,7 +247,7 @@ footer p {
     color: #fff;
     text-align: center;
     margin-top: 15px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-size: 1.1em;
 }
 footer .wave {
@@ -256,9 +256,9 @@ footer .wave {
     left: 0;
     width: 100%;
     height: 50px;
-    background:  url(wave.png);
+    background:  url(./images/wave-orange.png);
     background-size: 1000px 55px;
-    color: #c07bd1
+    transform: translateY(50px);
 }
 footer .wave#wave1 {
     z-index: 1000;
