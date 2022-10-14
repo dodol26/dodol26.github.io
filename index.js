@@ -30,9 +30,10 @@ dbItem.map((item) => {
 
 })
 
-let dbUser = {
-  dodol: { password: "rahasia", email: "tonni.lius26@gmail.com", type: "admin" },
-}
+let dbUser = [
+    {email: "tonni.lius26@gmail.com", password: "rahasia", type: "admin"}
+]
+
 function hide(param) {
   document.getElementById(param).style.display = 'none'
 }
@@ -44,22 +45,40 @@ function show(param) {
 let inputPassword = document.getElementById("password-input").value
 let inputEmail = document.getElementById("email-input").value
 
-function signUp(inputUser, inputPassword, inputEmail) {
-  if (!inputPassword) {
-    alert("Mohon masukan password")
-  } else if (!inputEmail) {
-    alert("Mohon masukan email")
-  }
-
-  if (dbUser[inputUser]) {
-    alert("User sudah ada, mohon gunakan user lain")
-  } else {
-    dbUser[inputUser] = {
-      password: inputPassword,
-      email: inputEmail,
-      type: "member",
+function signUp(inputEmail, inputPassword, confirmPassword){
+    if (!inputEmail && !inputPassword && !confirmPassword){
+        alert("Invalid input")
+    }else if (!inputEmail && !inputPassword){
+        alert("Mohon masukan email dan password anda")
+    }else if (!inputEmail && !confirmPassword){
+        alert("Mohon masukan email dan konfirmasi password anda")
+    }else if (!inputPassword && !confirmPassword){
+        alert("Mohon masukan password dan konfirmasi password anda")
+    }else if (!inputEmail){
+        alert("Mohon masukan email anda")
+    }else if (!inputPassword){
+        alert("Mohon masukan password anda")
+    }else if (!confirmPassword){
+        alert("Mohon masukan konfirmasi password anda")
+    }else{
+        if (inputPassword !== confirmPassword){
+            alert("Maaf password tidak sama, mohon diperiksa kembali")
+        }else {
+            dbUser.map((item)=>{
+                const {email, password, type} = item
+                if(inputEmail === email){
+                    alert("Maaf email sudah terpakai, mohon gunakan email lain") 
+                }else {
+                    dbUser.push({
+                        email: inputEmail, 
+                        password: inputPassword, 
+                        type: "member"
+                    })
+                    alert("Berhasil")
+                }
+            })
+        }
     }
-  }
 }
 
 let selectedId = document.getElementById("selected-id")
@@ -130,7 +149,31 @@ signupLink.onclick = (() => {
   return false;
 });
 
-
+function checkLogin(inputEmail, inputPassword){
+    if (!inputEmail && !inputPassword){
+        alert("Invalid input")
+    }else if (!inputEmail){
+        alert("Mohon masukan email anda")
+    }else if (!inputPassword){
+        alert("Mohon masukan password anda")
+    }else{
+        dbUser.map((item)=>{
+            const {email, password, type} = item
+            if (inputEmail === email){
+                if (inputPassword === password){
+                    // if (type === "admin"){
+                    //     show("admin")
+                    // }
+                    alert("Login Berhasil")
+                }else {
+                    alert("Password salah")
+                }
+            }else {
+                alert("Email tidak ditemukan")
+            }
+        })
+    }
+    
 let klik = 0
 function addToCart(param) {
   let totalBill = 0
